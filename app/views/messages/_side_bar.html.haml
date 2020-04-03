@@ -4,31 +4,19 @@
       .top_items_name
         = current_user.name
       .top_items_icons
-        = link_to  do
+        = link_to new_group_path do
           = icon('far', 'far fa-edit', class: "contents__btn")
 
         = link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class: "contents__btn")
 
   .side_bar_group_list
-    .group
-      .group_name
-        techcamp
-      .group_talk
-        まだメッセージがありません。
-
-
-    .group
-      .group_name
-        techcamp
-      .group_talk
-        まだメッセージがありません。
-    
-
-    .group
-      .group_name
-        techcamp
-      .group_talk
-        まだメッセージがありません。
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group_name
+            = group.name
+          .group_talk
+            メッセージはまだありません。
     
     
