@@ -2,49 +2,28 @@
   .main_chat_group_info
     .group_data
       .group_data_name
-        test
+        = @group.name
       .group_data_member
-        Member: masa
+        - @group.users.each do |user|
+          = user.name
     .group_edit
-      = link_to "#",class: "content__edit" do
+      = link_to edit_group_path(@group) ,class: "content__edit" do
         Edit
-  
+
   .main_chat_message_list
-    .main_chat_message_list_detail
-      .main_chat_message_list_detail_name
-        masa
-      .main_chat_message_list_detail_date
-        2019/11/20(Wed) 17:43:01
-    .main_chat_message_list_contents
-      おはよう！
-
-    .main_chat_message_list_detail
-      .main_chat_message_list_detail_name
-        masa
-      .main_chat_message_list_detail_date
-        2019/11/20(Wed) 17:43:01
-    .main_chat_message_list_contents
-      おはよう！
-
-    .main_chat_message_list_detail
-      .main_chat_message_list_detail_name
-        masa
-      .main_chat_message_list_detail_date
-        2019/11/20(Wed) 17:43:01
-    .main_chat_message_list_contents
-      おはよう！
-
+    = render @messages
 
   .main_chat_message_form
-    .main_chat_message_form_new
-      .main_chat_message_form_new_contents
-        .main_chat_message_form_new_contents_comment 
-          type a message
-        .main_chat_message_form_new_contents_photo
-          = icon('fa', 'image')
-      .main_chat_message_form_new_send
-        = link_to "#",class: "content__send" do
-          Send
+    = form_for [@group, @message] do |f|
+      .message_form_contents
+        = f.text_field :content, class: 'comment', placeholder: 'type a message'
+        .message_form_contents_image 
+          = f.label :image, class: 'image_photo' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden '
+        = f.submit 'Send', class: 'content_send'
+
+
 
     
 

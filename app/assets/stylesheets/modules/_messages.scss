@@ -34,17 +34,21 @@
     }
   }
   &_group_list{
-    padding: 20px 20px 0;
+    padding: 20px 20px 0 ;
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     .group{
       margin-bottom: 40px;
-      color: #ffffff;
+      a {
+        text-decoration: none;
+      }
       &_name{
+        color: white;
         font-size: 15px;
-        margin-bottom: 5px 
+        margin-bottom: 5px; 
       }
       &_talk{
+        color: white;
         font-size: 11px;
       }
     }     
@@ -85,71 +89,80 @@
       padding: 0 20px;
     }
   }
+
   &_message_list{
     background-color: #fafafa;
     height: calc(100vh - 100px - 90px);
-    margin-left: 40px;
+    padding-left: 40px;
     padding-top: 35px ;
-    &_detail{
-      display: flex;
-      &_name{
-        color: #333333;
-        font-size: 16px;
-        font-weight: bold;
+    .message_list{
+      &_detail{
+        display: flex;
+        margin-bottom: 10px;
+        &_name{
+          color: #333333;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &_date{
+          color: #999999;
+          font-size: 12px;
+          margin-left: 10px;
+        }
       }
-      &_date{
-        color: #999999;
-        font-size: 12px;
-        margin-left: 10px;
+      &_contents{
+        margin-top: 12px;
+        margin-bottom: 10px;
+
+        &_content{
+          color: #434A54;
+          font-size: 14px;
+        }
       }
     }
-  &_contents{
-    color: #434A54;
-    font-size: 14px;
-    margin-top: 12px;
   }
-  }
+  
   &_message_form{
     background-color: #d2d2d2;
     height: 90px;
-    padding: 20px 40px;
-    &_new{
+    padding: 20px 50px 20px 40px;
+    .message_form_contents{
       display: flex;
       justify-content: space-between;
-      &_contents{
-        background-color: #ffffff;
-        width: 100%;
-        padding: 0 10px;
+    }
+      .comment{
+        height: 50px;
+        width: 100% ;
+      }
+      .image{
         position: relative;
-        &_comment{
-          font-size: 16px;
-          color: #434a54;
+        height: 50px;
+        padding-right: 10px;
+        background-color: $white;
+        &_photo{
+          position: absolute;
+          right: 190px;
+          font-size: 20px;
           line-height: 50px;
         }
-        &_photo{
-          font-size: 1.3rem;
-          position: absolute;
-          right: 10px;
-          top: 10px;
-          cursor: pointer;
-        }
       }
-      &_send{
-        width: 100px;
-        height: 50px;
-        padding: 0 30px;
-        margin-left: 15px;
-        background-color: #38aef0;
+      .content_send{
+          width: 100px;
+          height: 50px;
+          padding: 0 30px;
+          margin-left: 15px;
+          background-color: #38aef0;
+          text-decoration: none;
+          color: white;
+          line-height: 50px;
       }
-    }
-  }
+  } 
+}
+
+.hidden {
+  display: none;
 }
 
 .content__edit{
   text-decoration: none;
-}
-.content__send{
-  text-decoration: none;
-  color: white;
-  line-height: 50px;
 }
