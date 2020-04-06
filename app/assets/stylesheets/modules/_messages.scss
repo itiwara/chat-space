@@ -118,6 +118,10 @@
           color: #434A54;
           font-size: 14px;
         }
+        &_image{
+          width: 500px;
+          height: 400px;
+        }
       }
     }
   }
@@ -126,6 +130,7 @@
     background-color: #d2d2d2;
     height: 90px;
     padding: 20px 50px 20px 40px;
+    position: relative;
     .message_form_contents{
       display: flex;
       justify-content: space-between;
@@ -135,7 +140,7 @@
         width: 100% ;
       }
       .image{
-        position: relative;
+        position: fixed;
         height: 50px;
         padding-right: 10px;
         background-color: $white;
