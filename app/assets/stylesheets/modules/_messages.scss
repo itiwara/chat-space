@@ -95,6 +95,7 @@
     height: calc(100vh - 100px - 90px);
     padding-left: 40px;
     padding-top: 35px ;
+    overflow: scroll;
     .message_list{
       &_detail{
         display: flex;
