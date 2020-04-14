@@ -60,7 +60,7 @@ $(function(){
       $('input').prop('disabled', false);
     })
     .fail(function(){
-      alert('error');
+      alert('メッセージを入力して下さい。');
     })
   });
   
