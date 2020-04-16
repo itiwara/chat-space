@@ -4,8 +4,10 @@
       .group_data_name
         = @group.name
       .group_data_member
-        - @group.users.each do |user|
-          = user.name
+        Member：
+        .group_data_member_detail
+          - @group.users.each do |user|
+            = user.name
     .group_edit
       = link_to edit_group_path(@group) ,class: "content__edit" do
         Edit
